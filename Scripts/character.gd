@@ -15,16 +15,17 @@ func take_damage():
 	die()
 	print("Player has", health, "hearts left")
 	
-	if health >= 0:
+	if health <= 0:
 		die()
-	else:
-		beconme_invincible()
+	#else:
+		#beconme_invincible()
 		
 func die():
-	if take_damage():
-		Startpos
+	if health > 0:
+		position = Vector2(0,0)
 		print("Player has respawned.")
 	else:
+		# Reload the game when they are dead.
 		print("Player has died")
 var wallHolding = 0
 
@@ -184,4 +185,3 @@ func _on_right_area_body_exited(body: Node2D) -> void:
 
 func _on_left_area_body_exited(body: Node2D) -> void:
 	bodyExited(body, get_node("LeftArea/CollisionShape2D"), "Left")
->>>>>>> f6084fa16df37cc7c7edeedd7336c27b3ad1270b
