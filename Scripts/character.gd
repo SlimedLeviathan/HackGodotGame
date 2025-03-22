@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D  # Reference to AnimatedSprite2D
 
-const SPEED = 300.0
+const SPEED = 25.0
 const JUMP_VELOCITY = -400.0
 const GRAVITY = 980.0  # Set gravity manually if get_gravity() isn't available
 
@@ -25,8 +25,9 @@ func _physics_process(delta: float) -> void:
 		var gravity = GRAVITY * delta
 		
 		if wallHolding != 0:
-			velocity.y = 50 # Apply gravity
+			velocity.y = 50 
 		else:
+			# Apply gravity
 			velocity.y += gravity
 	
 	# Get input direction for left and right movement
@@ -45,11 +46,12 @@ func _physics_process(delta: float) -> void:
 		elif wallHolding != 0:
 			velocity.y = JUMP_VELOCITY / 1.5
 			velocity.x += JUMP_VELOCITY * wallHolding / 1.5
+			wallHolding = 0
 			anim.play("jump")
 			
 	# Apply movement
 	if direction != 0:
-		velocity.x = direction * SPEED
+		velocity.x += direction * SPEED
 		walk_frame_timer += delta  # Update the timer while moving
 
 		# Alternate walk animation based on the timer
@@ -70,14 +72,14 @@ func _physics_process(delta: float) -> void:
 					anim.play("walk_left")
 			facing_right = false
 	else:
-		#velocity.x += move_toward(velocity.x, 0, SPEED)
+		velocity.x = velocity.x / 5
 		# Ensure the idle animation only plays if it's not already set
 		var idle_animation = "idle_right" if facing_right else "idle_left"
 		if anim.animation != idle_animation:
 			anim.play(idle_animation)
 		
-	#if abs(velocity.x) > 300:
-		#velocity.x = velocity.x / 1.1
+	if abs(velocity.x) > 300:
+		velocity.x = velocity.x / 1.1
 
 	move_and_slide()
 
@@ -95,7 +97,8 @@ func tileInteract(block, direction):
 			
 func tileUninteract(coords, block, direction):
 	# wavy walls
-	if block[2] == 6 and (lastEntered[direction][0] != coords[0] or lastEntered[direction][1] != coords[1]):
+	if block[2] == 6: 
+	#and (lastEntered[direction][0] != coords[0] or lastEntered[direction][1] != coords[1]):
 		if block[1] == 1 and direction == "Left":
 			wallHolding = 0
 			
