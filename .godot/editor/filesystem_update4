@@ -3,3 +3,5 @@ res://Scenes/tile_map_layer.gd
 res://Scenes/Character.tscn
 res://Scenes/CollisionArea.tscn
 res://Scenes/character.gd
+res://Scenes/collide_area.gd
+res://Scenes/main.gd
