@@ -2,7 +2,7 @@ extends Node2D
 
 var levelEditor = preload("res://Scenes/LevelEditor.tscn").instantiate()
 func changeToLevelEditor():
-	# remove old scene
+	# hide old scene
 	self.visible = false
 	
 	# add level editor scene

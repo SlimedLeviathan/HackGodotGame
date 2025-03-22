@@ -11,6 +11,10 @@ func _ready() -> void:
 	
 	for index in range(tile_set.get_source_count()):
 		var source_id = tile_set.get_source_id(index)
+		
+		if (source_id == 0 or source_id == 3):
+			continue
+		
 		var source = tile_set.get_source(source_id) as TileSetAtlasSource
 		
 		for tileIndex in range(source.get_tiles_count()):
@@ -27,9 +31,28 @@ func _ready() -> void:
 			self.add_icon_item(texture)
 			
 			blockList.append([coords.x, coords.y, source_id])
-
+	
+	var wireTM:TileMapLayer = get_node("/root/LevelEditor/WireTileMapLayer")
+	
+	var wireTS = wireTM.tile_set
+	
+	var wireSource = wireTS.get_source(2)	
+	
+	for index in range(10):
+		var atlasImage:Image = wireSource.texture.get_image()
+			
+		var tileImage = atlasImage.get_region(wireSource.get_tile_texture_region(Vector2i(index,0)))
+		
+		tileImage.resize(100,100)
+		
+		var texture = ImageTexture.create_from_image(tileImage)
+		
+		self.add_icon_item(texture)
+		
+		blockList.append([index, 0, "Wires"])
 
 func _on_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	var block = blockList[index]
-	
-	get_node("/root/LevelEditor/TileMapLayer").setSelectedBlock(block[0], block[1], block[2])
+	if (mouse_button_index == 1):
+		var block = blockList[index]
+		
+		get_node("/root/LevelEditor/TileMapLayer").setSelectedBlock(block[0], block[1], block[2])

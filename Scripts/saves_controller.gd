@@ -25,7 +25,8 @@ func deleteCurrentFile():
 		DirAccess.remove_absolute("res://Levels/User Levels/" + currentFile + ".txt")
 		
 	# no matter what, the tilemap should be cleared
-	get_node("/root/LevelEditor/TileMapLayer").clear()
+	get_node("/root/LevelEditor/TileMapLayer").resetLevel()
+	get_node("/root/LevelEditor/WireTileMapLayer").clear()
 	
 	currentFile = ""
 	
@@ -53,3 +54,21 @@ func saveLevel():
 # just easy implementation
 func _on_delete_button_pressed() -> void:
 	deleteCurrentFile()
+
+func _on_done_button_pressed() -> void:
+	
+	var main = get_node("/root/Main")
+	
+	# remove old scene
+	main.visible = true
+	
+	# remove level editor from the tree
+	get_tree().root.remove_child(self.get_parent().get_parent())
+	
+	var character = main.get_node("Character")
+	
+	# sets the level editors camera to the current one
+	character.get_node("Camera2D").make_current()
+	
+	# turn on character movement
+	character.setPaused(false)

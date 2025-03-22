@@ -1,11 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://hdcmgd4okgw"]
+[gd_scene load_steps=26 format=3 uid="uid://hdcmgd4okgw"]
 
 [ext_resource type="Texture2D" uid="uid://cciy1853h3o6v" path="res://art/TileMap1.png" id="1_1r4x7"]
+[ext_resource type="Texture2D" uid="uid://cr1n1qt6ii231" path="res://art/WireTileMap.png" id="1_j0hnb"]
+[ext_resource type="Script" path="res://Scenes/editor_wire_tml.gd" id="2_cls28"]
 [ext_resource type="Texture2D" uid="uid://dy20g38nm2l8q" path="res://art/TileMap2.png" id="2_imm3e"]
 [ext_resource type="Script" path="res://Scripts/level_editor_tile_map.gd" id="3_7tugd"]
+[ext_resource type="Texture2D" uid="uid://dadsr5v760bnb" path="res://art/startDoor.png" id="3_kovpu"]
 [ext_resource type="Script" path="res://Scripts/close_objects_button.gd" id="4_5f2x0"]
 [ext_resource type="Script" path="res://Scripts/saves_controller.gd" id="4_vdyh6"]
 [ext_resource type="Script" path="res://Scripts/block_list.gd" id="5_3wdbp"]
+[ext_resource type="Texture2D" uid="uid://x5lo2aw4tnd2" path="res://art/endDoor.png" id="6_co3w5"]
 [ext_resource type="Script" path="res://Scripts/save_button.gd" id="6_elcmd"]
 [ext_resource type="Script" path="res://Scripts/name_text_edit.gd" id="7_2wjs8"]
 [ext_resource type="Script" path="res://Scripts/load_button.gd" id="7_j6sn3"]
@@ -13,7 +17,43 @@
 [ext_resource type="Script" path="res://Scripts/load_control.gd" id="8_xj7ml"]
 [ext_resource type="Script" path="res://Scripts/level_list.gd" id="9_um7tq"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dr8h7"]
+resource_name = "Wires"
+texture = ExtResource("1_j0hnb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+10:1/0 = 0
+9:1/0 = 0
+8:1/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_babex"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_dr8h7")
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cooy7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_705g7"]
+texture = ExtResource("3_kovpu")
+texture_region_size = Vector2i(360, 360)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bku1w"]
 texture = ExtResource("1_1r4x7")
@@ -49,20 +89,34 @@ texture_region_size = Vector2i(360, 360)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxfws"]
+texture = ExtResource("6_co3w5")
+texture_region_size = Vector2i(360, 360)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_a13wl"]
 tile_size = Vector2i(360, 360)
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_cooy7")
 sources/1 = SubResource("TileSetAtlasSource_bku1w")
 sources/2 = SubResource("TileSetAtlasSource_mpdnp")
+sources/0 = SubResource("TileSetAtlasSource_705g7")
+sources/3 = SubResource("TileSetAtlasSource_nxfws")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u87nu"]
 size = Vector2(43120, 31100)
 
 [node name="LevelEditor" type="Node2D"]
 
+[node name="WireTileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+scale = Vector2(0.563, 0.563)
+tile_set = SubResource("TileSet_babex")
+script = ExtResource("2_cls28")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.05, 0.05)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_a13wl")
 script = ExtResource("3_7tugd")
 
@@ -188,6 +242,15 @@ offset_right = -411.0
 offset_bottom = -293.0
 text = "Delete"
 
+[node name="DoneButton" type="Button" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -403.0
+offset_top = -324.0
+offset_right = -354.0
+offset_bottom = -293.0
+text = "Done
+"
+
 [connection signal="input_event" from="TileMapLayer/Area2D" to="TileMapLayer" method="_on_input_event"]
 [connection signal="pressed" from="Camera2D/Control/TileControl/CollapseButton" to="Camera2D/Control/TileControl/CollapseButton" method="_on_pressed"]
 [connection signal="item_clicked" from="Camera2D/Control/TileControl/ItemList" to="Camera2D/Control/TileControl/ItemList" method="_on_item_clicked"]
@@ -197,3 +260,4 @@ text = "Delete"
 [connection signal="item_clicked" from="Camera2D/Control/LoadControl/LevelList" to="Camera2D/Control/LoadControl/LevelList" method="_on_item_clicked"]
 [connection signal="text_changed" from="Camera2D/Control/SaveControl/NameTextEdit" to="Camera2D/Control/SaveControl/NameTextEdit" method="_on_text_changed"]
 [connection signal="pressed" from="Camera2D/Control/DeleteButton" to="Camera2D/Control" method="_on_delete_button_pressed"]
+[connection signal="pressed" from="Camera2D/Control/DoneButton" to="Camera2D/Control" method="_on_done_button_pressed"]

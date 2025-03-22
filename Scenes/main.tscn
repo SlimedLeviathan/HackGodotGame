@@ -50,7 +50,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_y1aug")
 sources/1 = SubResource("TileSetAtlasSource_vt6km")
 sources/2 = SubResource("TileSetAtlasSource_j6wi4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 

@@ -25,3 +25,6 @@ res://Scripts/level_list.gd
 res://Scripts/load_button.gd
 res://Scripts/saves_controller.gd
 res://Scripts/name_text_edit.gd
+res://Scripts/block_list.gd
+res://Scenes/editor_wire_tml.gd
+res://Levels/User Levels/A specific name.txt

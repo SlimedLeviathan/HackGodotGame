@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742636222
+::res://::1742656675
 ::res://addons/::1742619315
 ::res://addons/godot-git-plugin/::1742620597
 git_plugin.gdextension::GDExtension::-1::1742617634::0::1::::<><>::
@@ -8,68 +8,41 @@ THIRDPARTY.md::TextFile::-1::1742617634::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1742617634
 ::res://addons/godot-git-plugin/macos/::1742617634
 ::res://addons/godot-git-plugin/win64/::1742622305
-::res://art/::1742622315
+::res://art/::1742656782
 astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png::CompressedTexture2D::7468955629203743098::1742617634::1742617667::1::::<><>::
+endDoor.png::CompressedTexture2D::1676969043501186653::1742656782::1742656783::1::::<><>::
 icon.svg::CompressedTexture2D::5362236494570387569::1742617634::1742622315::1::::<><>::
+startDoor.png::CompressedTexture2D::7166580058345403319::1742656782::1742656783::1::::<><>::
 TileMap1.png::CompressedTexture2D::4931239496060018747::1742618564::1742622315::1::::<><>::
 TileMap2.png::CompressedTexture2D::8901062659574406678::1742619389::1742622315::1::::<><>::
-::res://Levels/::1742632415
-definetly a real not user level.txt::TextFile::-1::1742632415::0::1::::<><>::
+WireTileMap.png::CompressedTexture2D::6020562153530219806::1742654068::1742654073::1::::<><>::
+::res://Levels/::1742653919
 Level1.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level2.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level3.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level4.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level5.txt::TextFile::-1::1742617634::0::1::::<><>::
-::res://Levels/User Levels/::1742636156
-;(.txt::TextFile::-1::1742635703::0::1::::<><>::
-ah wait.txt::TextFile::-1::1742635268::0::1::::<><>::
-Another test.txt::TextFile::-1::1742634673::0::1::::<><>::
-asdasda.txt::TextFile::-1::1742634506::0::1::::<><>::
-atp i should get loading done.txt::TextFile::-1::1742634827::0::1::::<><>::
-bro.txt::TextFile::-1::1742635618::0::1::::<><>::
-bruh.txt::TextFile::-1::1742635893::0::1::::<><>::
-buh.txt::TextFile::-1::1742634954::0::1::::<><>::
-dick lmao.txt::TextFile::-1::1742632371::0::1::::<><>::
-hopefully.txt::TextFile::-1::1742635346::0::1::::<><>::
-huh.txt::TextFile::-1::1742635802::0::1::::<><>::
-i can finally leave.txt::TextFile::-1::1742635230::0::1::::<><>::
-IT WORKS.txt::TextFile::-1::1742635453::0::1::::<><>::
-its finally over.txt::TextFile::-1::1742635115::0::1::::<><>::
-jk.txt::TextFile::-1::1742636168::0::1::::<><>::
-kms.txt::TextFile::-1::1742635671::0::1::::<><>::
-nbro.txt::TextFile::-1::1742635778::0::1::::<><>::
-now it is.txt::TextFile::-1::1742635163::0::1::::<><>::
-ok wtvr.txt::TextFile::-1::1742635860::0::1::::<><>::
-please not another.txt::TextFile::-1::1742634746::0::1::::<><>::
-smthn.txt::TextFile::-1::1742635950::0::1::::<><>::
-Something.txt::TextFile::-1::1742633237::0::1::::<><>::
-sure are a lot of these huh.txt::TextFile::-1::1742634717::0::1::::<><>::
-Test.txt::TextFile::-1::1742634547::0::1::::<><>::
-UHHHHH.txt::TextFile::-1::1742634332::0::1::::<><>::
-uhu.txt::TextFile::-1::1742635557::0::1::::<><>::
-w.txt::TextFile::-1::1742635834::0::1::::<><>::
-waaaa.txt::TextFile::-1::1742635402::0::1::::<><>::
-wah.txt::TextFile::-1::1742635986::0::1::::<><>::
-wfqqw.txt::TextFile::-1::1742634431::0::1::::<><>::
-what.txt::TextFile::-1::1742635497::0::1::::<><>::
-WHY.txt::TextFile::-1::1742634984::0::1::::<><>::
-::res://Scenes/::1742636222
-Character.tscn::PackedScene::7202686359489349869::1742636148::0::1::::<><>::res://Scripts/character.gd<>uid://deoauw3ieie4q::::res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png
+WireTileMap.png::CompressedTexture2D::8278898135793588158::1742653918::1742653919::1::::<><>::
+::res://Levels/User Levels/::1742656675
+A specific name.txt::TextFile::-1::1742650320::0::1::::<><>::
+::res://Scenes/::1742656734
+Character.tscn::PackedScene::7202686359489349869::1742656733::0::1::::<><>::res://Scripts/character.gd<>uid://deoauw3ieie4q::::res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png
 CollisionArea.tscn::PackedScene::5704797682882862972::1742626896::0::1::::<><>::res://Scripts/collide_area.gd
-LevelEditor.tscn::PackedScene::14637006569177898::1742636229::0::1::::<><>::uid://cciy1853h3o6v::::res://art/TileMap1.png<>uid://dy20g38nm2l8q::::res://art/TileMap2.png<>res://Scripts/level_editor_tile_map.gd<>res://Scripts/close_objects_button.gd<>res://Scenes/saves_controller.gd<>res://Scripts/block_list.gd<>res://Scripts/save_button.gd<>res://Scenes/name_text_edit.gd<>res://Scenes/load_button.gd<>res://Scenes/save_control.gd<>res://Scenes/load_control.gd<>res://Scenes/level_list.gd
-level_list.gd::GDScript::-1::1742633026::0::1::::<>ItemList<>::
-load_button.gd::GDScript::-1::1742636148::0::1::::<>Button<>::
-load_control.gd::GDScript::-1::1742636148::0::1::::<>Control<>::
-main.tscn::PackedScene::3752359268898390081::1742636148::0::1::::<><>::res://Scripts/main.gd<>uid://cciy1853h3o6v::::res://art/TileMap1.png<>uid://dy20g38nm2l8q::::res://art/TileMap2.png<>res://Scripts/tile_map_layer.gd<>uid://davbgr770oij2::::res://Scenes/Character.tscn<>uid://cnjpgjd6f1ia3::::res://Scenes/CollisionArea.tscn
-name_text_edit.gd::GDScript::-1::1742634324::0::1::::<>TextEdit<>::
-saves_controller.gd::GDScript::-1::1742636222::0::1::::<>Control<>::
-save_control.gd::GDScript::-1::1742636148::0::1::::<>Control<>::
-::res://Scripts/::1742636148
-block_list.gd::GDScript::-1::1742630594::0::1::::<>ItemList<>::
+editor_wire_tml.gd::GDScript::-1::1742655163::0::1::::<>TileMapLayer<>::
+LevelEditor.tscn::PackedScene::14637006569177898::1742656734::0::1::::<><>::uid://cciy1853h3o6v::::res://art/TileMap1.png<>uid://cr1n1qt6ii231::::res://art/WireTileMap.png<>res://Scenes/editor_wire_tml.gd<>uid://dy20g38nm2l8q::::res://art/TileMap2.png<>res://Scripts/level_editor_tile_map.gd<>res://Scripts/close_objects_button.gd<>res://Scripts/saves_controller.gd<>res://Scripts/block_list.gd<>res://Scripts/save_button.gd<>res://Scripts/name_text_edit.gd<>res://Scripts/load_button.gd<>res://Scripts/save_control.gd<>res://Scripts/load_control.gd<>res://Scripts/level_list.gd
+main.tscn::PackedScene::3752359268898390081::1742656733::0::1::::<><>::res://Scripts/main.gd<>uid://cciy1853h3o6v::::res://art/TileMap1.png<>uid://dy20g38nm2l8q::::res://art/TileMap2.png<>res://Scripts/tile_map_layer.gd<>uid://davbgr770oij2::::res://Scenes/Character.tscn<>uid://cnjpgjd6f1ia3::::res://Scenes/CollisionArea.tscn
+::res://Scripts/::1742656733
+block_list.gd::GDScript::-1::1742655163::0::1::::<>ItemList<>::
 character.gd::GDScript::-1::1742624405::0::1::::<>CharacterBody2D<>::
 close_objects_button.gd::GDScript::-1::1742628300::0::1::::<>Button<>::
 collide_area.gd::GDScript::-1::1742623876::0::1::::<>Area2D<>::
-level_editor_tile_map.gd::GDScript::-1::1742634324::0::1::::<>TileMapLayer<>::
-main.gd::GDScript::-1::1742626891::0::1::::<>Node2D<>::
-save_button.gd::GDScript::-1::1742636148::0::1::::<>Button<>::
-tile_map_layer.gd::GDScript::-1::1742632355::0::1::::<>TileMapLayer<>::
+level_editor_tile_map.gd::GDScript::-1::1742656733::0::1::::<>TileMapLayer<>::
+level_list.gd::GDScript::-1::1742637559::0::1::::<>ItemList<>::
+load_button.gd::GDScript::-1::1742636793::0::1::::<>Button<>::
+load_control.gd::GDScript::-1::1742636148::0::1::::<>Control<>::
+main.gd::GDScript::-1::1742650034::0::1::::<>Node2D<>::
+name_text_edit.gd::GDScript::-1::1742637010::0::1::::<>TextEdit<>::
+saves_controller.gd::GDScript::-1::1742656104::0::1::::<>Control<>::
+save_button.gd::GDScript::-1::1742636793::0::1::::<>Button<>::
+save_control.gd::GDScript::-1::1742636148::0::1::::<>Control<>::
+tile_map_layer.gd::GDScript::-1::1742654292::0::1::::<>TileMapLayer<>::
