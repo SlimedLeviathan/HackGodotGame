@@ -1,4 +1,8 @@
+RayCast2D
+Timer
+CollisionShape2D
 AnimatedSprite2D
+CharacterBody2D
 Button
 Label
 Control
@@ -8,8 +12,4 @@ TextEdit
 Container
 ScrollContainer
 TabContainer
-CollisionShape2D
 CollisionPolygon2D
-Area2D
-CenterContainer
-Camera2D

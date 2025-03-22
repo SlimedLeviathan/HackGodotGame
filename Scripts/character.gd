@@ -9,6 +9,24 @@ const GRAVITY = 980.0  # Set gravity manually if get_gravity() isn't available
 var facing_right = true  # Track direction
 var paused = false  # Used for pausing movement
 
+var health = 5 # Player hearts
+func take_damage():
+	health -= 1
+	die()
+	print("Player has", health, "hearts left")
+	
+	if health >= 0:
+		die()
+	else:
+		beconme_invincible()
+		
+func die():
+	if take_damage():
+		Startpos
+		print("Player has respawned.")
+	else:
+		print("Player has died")
+
 var walk_frame_timer = 0.0  # Timer to alternate walk animations
 const WALK_ANIM_SWITCH_TIME = 0.2  # Time interval to switch walk animations
 
@@ -65,3 +83,4 @@ func _physics_process(delta: float) -> void:
 
 func setPaused(pause: bool) -> void:
 	paused = pause
+	

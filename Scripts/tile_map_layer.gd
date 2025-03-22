@@ -7,19 +7,6 @@ var character_scene : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Load the character scene
-	#character_scene = preload("res://Scenes/Character.tscn")
-	
-	#var levelFolder = DirAccess.get_files_at("res://Levels")
-	#
-	#loadLevel(files[rng.randi_range(0,files.size() - 1)].get_basename())
-	#saveLevel("Level5", getLevelData())
-	
-	#Add the character to the scene at a specific position
-	#var character = character_scene.instantiate()
-	#character.position = Vector2(100, 100) 
-	#get_tree().root.add_child(character)
-	#self.get_parent().add_child(character)
 	
 	pass # Replace with function body.
 

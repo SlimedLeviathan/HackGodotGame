@@ -1,4 +1,6 @@
 res://Scenes/main.tscn
+res://Scenes/Slime.tscn
+res://Scenes/slime.gd
 res://Scenes/Character.tscn
-res://Scenes/LevelEditor.tscn
 res://Scripts/character.gd
+res://Scripts/tile_map_layer.gd

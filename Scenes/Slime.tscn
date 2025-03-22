@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b50a6jcqxrxgq"]
+
+[ext_resource type="Script" path="res://Scenes/slime.gd" id="1_aj0uq"]
+[ext_resource type="Texture2D" uid="uid://dfd4xejr801vn" path="res://art/Illustration43.png" id="2_ksmoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_326e8"]
+atlas = ExtResource("2_ksmoh")
+region = Rect2(0, 0, 818, 570)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx071"]
+atlas = ExtResource("2_ksmoh")
+region = Rect2(0, 540, 1080, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k12k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_326e8")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx071")
+}],
+"loop": true,
+"name": &"grounded",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmdbp"]
+radius = 138.0
+height = 328.0
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_aj0uq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(124.5, 98.5)
+scale = Vector2(0.993519, 1.01296)
+sprite_frames = SubResource("SpriteFrames_3k12k")
+animation = &"grounded"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 99)
+shape = SubResource("CapsuleShape2D_hmdbp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
