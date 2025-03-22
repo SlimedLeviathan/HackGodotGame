@@ -90,7 +90,7 @@ shape = SubResource("RectangleShape2D_kpryf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.25, 0.25)
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(21, -37)
