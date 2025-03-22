@@ -1,63 +1,22 @@
-[gd_scene load_steps=11 format=4 uid="uid://btpw2rejh1pe4"]
+[gd_scene load_steps=6 format=4 uid="uid://btpw2rejh1pe4"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
-[ext_resource type="Texture2D" uid="uid://cciy1853h3o6v" path="res://art/TileMap1.png" id="1_tle2d"]
-[ext_resource type="Texture2D" uid="uid://dy20g38nm2l8q" path="res://art/TileMap2.png" id="2_knp28"]
+[ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="2_ksc7s"]
 [ext_resource type="Script" path="res://Scripts/tile_map_layer.gd" id="2_w5ved"]
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y1aug"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vt6km"]
-texture = ExtResource("1_tle2d")
-texture_region_size = Vector2i(360, 360)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6wi4"]
-texture = ExtResource("2_knp28")
-texture_region_size = Vector2i(360, 360)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-180, -180, 180, -180, 180, 180, -180, 180)
-
-[sub_resource type="TileSet" id="TileSet_stkkc"]
-tile_size = Vector2i(360, 360)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_y1aug")
-sources/1 = SubResource("TileSetAtlasSource_vt6km")
-sources/2 = SubResource("TileSetAtlasSource_j6wi4")
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 
+[node name="WireTileMap" type="TileMapLayer" parent="."]
+scale = Vector2(1, 1)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQACAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7//3/AQACAAIAAAD7//z/AQACAAEAAAD7//v/AQACAAEAAAD7//r/AQACAAEAAAD7//n/AQACAAEAAAAGAP3/AQAAAAIAAAAGAPz/AQAAAAEAAAAGAPv/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPn/AQAAAAEAAAABAP7/AQAAAAIAAAACAP7/AQACAAIAAAACAP3/AQACAAAAAAABAP3/AQAAAAAAAAD6////AQACAAEAAAD6//7/AQACAAEAAAA=")
-tile_set = SubResource("TileSet_stkkc")
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQACAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7//3/AQACAAIAAAD7//z/BgAAAAEAAAD7//v/BgAAAAEAAAD7//r/BgAAAAEAAAD7//n/BgAAAAEAAAAGAP3/AQAAAAIAAAAGAPz/AQAAAAEAAAAGAPv/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPn/AQAAAAEAAAABAP7/AQAAAAIAAAACAP7/AQACAAIAAAACAP3/AQACAAAAAAABAP3/AQAAAAAAAAD6////AQACAAEAAAD6//7/AQACAAEAAAA=")
+tile_set = ExtResource("2_ksc7s")
 script = ExtResource("2_w5ved")
 
 [node name="Character" parent="." instance=ExtResource("3_2i4da")]

@@ -1,3 +1,6 @@
+TileMapLayer
+CollisionShape2D
+Area2D
 AnimatedSprite2D
 Button
 Label
@@ -8,8 +11,5 @@ TextEdit
 Container
 ScrollContainer
 TabContainer
-CollisionShape2D
 CollisionPolygon2D
-Area2D
 CenterContainer
-Camera2D

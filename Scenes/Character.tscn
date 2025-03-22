@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://davbgr770oij2"]
+[gd_scene load_steps=15 format=3 uid="uid://davbgr770oij2"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_v7gqa"]
 [ext_resource type="Texture2D" uid="uid://cpu6tfoujbw07" path="res://art/Illustration30_1.png" id="2_2uwd3"]
@@ -81,6 +81,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ks2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7r04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0twyb"]
+size = Vector2(43, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegb8"]
+
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_v7gqa")
 
@@ -97,3 +106,36 @@ position = Vector2(21, -37)
 scale = Vector2(0.669173, 0.654167)
 sprite_frames = SubResource("SpriteFrames_h0c21")
 animation = &"walk_right_2"
+
+[node name="LeftArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(-41, -71)
+shape = SubResource("RectangleShape2D_3ks2x")
+
+[node name="RightArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
+position = Vector2(40, -70)
+shape = SubResource("RectangleShape2D_x7r04")
+
+[node name="BottomArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomArea"]
+position = Vector2(1, 38)
+shape = SubResource("RectangleShape2D_0twyb")
+
+[node name="TopArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea"]
+position = Vector2(-3, -182)
+shape = SubResource("RectangleShape2D_cegb8")
+
+[connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
+[connection signal="body_exited" from="LeftArea" to="." method="_on_left_area_body_exited"]
+[connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]
+[connection signal="body_exited" from="RightArea" to="." method="_on_right_area_body_exited"]
+[connection signal="body_entered" from="BottomArea" to="." method="_on_bottom_area_body_entered"]
+[connection signal="body_exited" from="BottomArea" to="." method="_on_bottom_area_body_exited"]
+[connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]
+[connection signal="body_exited" from="TopArea" to="." method="_on_top_area_body_exited"]

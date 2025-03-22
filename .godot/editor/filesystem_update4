@@ -28,3 +28,4 @@ res://Scripts/name_text_edit.gd
 res://Scripts/block_list.gd
 res://Scenes/editor_wire_tml.gd
 res://Levels/User Levels/A specific name.txt
+res://TileSets/GlobalTileSet.tres
