@@ -149,3 +149,4 @@ tile_set = SubResource("TileSet_stkkc")
 script = ExtResource("2_w5ved")
 
 [node name="Character" parent="." instance=ExtResource("3_2i4da")]
+position = Vector2(69, -51)
