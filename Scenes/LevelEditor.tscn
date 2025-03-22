@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hdcmgd4okgw"]
+[gd_scene load_steps=28 format=3 uid="uid://hdcmgd4okgw"]
 
 [ext_resource type="Texture2D" uid="uid://cciy1853h3o6v" path="res://art/TileMap1.png" id="1_1r4x7"]
 [ext_resource type="Texture2D" uid="uid://cr1n1qt6ii231" path="res://art/WireTileMap.png" id="1_j0hnb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/save_button.gd" id="6_elcmd"]
 [ext_resource type="Script" path="res://Scripts/name_text_edit.gd" id="7_2wjs8"]
 [ext_resource type="Script" path="res://Scripts/load_button.gd" id="7_j6sn3"]
+[ext_resource type="Texture2D" uid="uid://bqgdebe47dasq" path="res://art/spike.png" id="7_wtdg4"]
 [ext_resource type="Script" path="res://Scripts/save_control.gd" id="8_2utkk"]
 [ext_resource type="Script" path="res://Scripts/load_control.gd" id="8_xj7ml"]
 [ext_resource type="Script" path="res://Scripts/level_list.gd" id="9_um7tq"]
@@ -94,6 +95,12 @@ texture = ExtResource("6_co3w5")
 texture_region_size = Vector2i(360, 360)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5iwrp"]
+texture = ExtResource("7_wtdg4")
+texture_region_size = Vector2i(360, 360)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16.9706, -118.794, 130, 180, -98, 180)
+
 [sub_resource type="TileSet" id="TileSet_a13wl"]
 tile_size = Vector2i(360, 360)
 physics_layer_0/collision_layer = 1
@@ -102,6 +109,7 @@ sources/1 = SubResource("TileSetAtlasSource_bku1w")
 sources/2 = SubResource("TileSetAtlasSource_mpdnp")
 sources/0 = SubResource("TileSetAtlasSource_705g7")
 sources/3 = SubResource("TileSetAtlasSource_nxfws")
+sources/5 = SubResource("TileSetAtlasSource_5iwrp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u87nu"]
 size = Vector2(43120, 31100)
@@ -132,14 +140,10 @@ shape = SubResource("RectangleShape2D_u87nu")
 [node name="Control" type="Control" parent="Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("4_vdyh6")
 
 [node name="TileControl" type="Control" parent="Camera2D/Control"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="CollapseButton" type="Button" parent="Camera2D/Control/TileControl"]
 layout_mode = 2
