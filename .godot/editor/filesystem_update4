@@ -5,3 +5,8 @@ res://Scenes/CollisionArea.tscn
 res://Scenes/character.gd
 res://Scenes/collide_area.gd
 res://Scenes/main.gd
+res://Scripts/main.gd
+res://Scenes/LevelEditor.tscn
+res://Scripts/collide_area.gd
+res://Scripts/character.gd
+res://Scenes/level_editor_tile_map.gd

@@ -11,5 +11,5 @@ func setFunction(function:Callable):
 	enterFunc = function
 
 func _on_body_entered(body: Node2D) -> void:
-	if enterFunc != null:
+	if enterFunc != null and is_instance_of(body, CharacterBody2D):
 		enterFunc.call()
