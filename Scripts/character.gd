@@ -14,17 +14,14 @@ func take_damage():
 	health -= 1
 	die()
 	print("Player has", health, "hearts left")
-	
-	#if health >= 0:
-		#die()
-	#else:
-		#become_invincible()
+	# set invincibility
 		
 func die():
-	if take_damage():
-		#Startpos
+	if health > 0:
+		position = Vector2(0,0)
 		print("Player has respawned.")
 	else:
+		# Reload the game when they are dead.
 		print("Player has died")
 var wallHolding = 0
 

@@ -12,7 +12,6 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 
 [node name="WireTileMapLayer" type="TileMapLayer" parent="."]
-scale = Vector2(1, 1)
 script = ExtResource("2_m1hq3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

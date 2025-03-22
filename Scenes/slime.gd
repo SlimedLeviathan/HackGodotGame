@@ -40,4 +40,4 @@ func _on_Timer_timeout():
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("player"):  # Make sure the player is in the correct group
-		body.take_damage(20)  # Call player's damage function
+		body.take_damage(1)  # Call player's damage function
