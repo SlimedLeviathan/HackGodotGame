@@ -1,17 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://davbgr770oij2"]
+[gd_scene load_steps=11 format=3 uid="uid://davbgr770oij2"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_v7gqa"]
-[ext_resource type="Texture2D" uid="uid://deoauw3ieie4q" path="res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png" id="2_y7fe5"]
+[ext_resource type="Texture2D" uid="uid://cpu6tfoujbw07" path="res://art/Illustration30_1.png" id="2_2uwd3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpryf"]
 size = Vector2(17, 189)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7kyh"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(798, 0, 266, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as5xy"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(0, 0, 266, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w63qr"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(1064, 0, 266, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g253a"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(1330, 0, 266, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waeu3"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(266, 0, 266, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikg5"]
+atlas = ExtResource("2_2uwd3")
+region = Rect2(532, 0, 266, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0c21"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_n7kyh")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_as5xy")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_w63qr")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_g253a")
+}],
+"loop": true,
+"name": &"walk_left_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_waeu3")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1ikg5")
+}],
+"loop": true,
+"name": &"walk_right_2",
+"speed": 5.0
+}]
+
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_v7gqa")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(153, -66)
-texture = ExtResource("2_y7fe5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -74)
@@ -20,3 +91,9 @@ shape = SubResource("RectangleShape2D_kpryf")
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.25, 0.25)
 zoom = Vector2(1.25, 1.25)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21, -37)
+scale = Vector2(0.669173, 0.654167)
+sprite_frames = SubResource("SpriteFrames_h0c21")
+animation = &"walk_right_2"
