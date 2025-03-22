@@ -15,14 +15,14 @@ func take_damage():
 	die()
 	print("Player has", health, "hearts left")
 	
-	if health >= 0:
-		die()
-	else:
-		beconme_invincible()
+	#if health >= 0:
+		#die()
+	#else:
+		#become_invincible()
 		
 func die():
 	if take_damage():
-		Startpos
+		#Startpos
 		print("Player has respawned.")
 	else:
 		print("Player has died")
@@ -104,6 +104,10 @@ func setPaused(pause: bool) -> void:
 	paused = pause
 	
 func tileInteract(block, direction):
+	# end door
+	if (block[2] == 3):
+		get_node("/root/Main").newLevel()
+		
 	# wavy walls
 	if block[2] == 6:
 		if block[1] == 1 and direction == "Left":
@@ -112,8 +116,8 @@ func tileInteract(block, direction):
 		elif block[1] == 0 and direction == "Right":
 			wallHolding = 1
 			
-func tileUninteract(coords, block, direction):
-	# wavy walls
+func tileUninteract(coords, block, direction):	
+	# wavy walls	
 	if block[2] == 6: 
 	#and (lastEntered[direction][0] != coords[0] or lastEntered[direction][1] != coords[1]):
 		if block[1] == 1 and direction == "Left":
@@ -122,8 +126,8 @@ func tileUninteract(coords, block, direction):
 		elif block[1] == 0 and direction == "Right":
 			wallHolding = 0
 
-func bodyEntered(body, area, direction):
-	if (body != self):		
+func bodyEntered(body, area, direction):	
+	if (body != self):	
 		if is_instance_of(body, TileMapLayer):
 			var tml = body as TileMapLayer
 			
@@ -184,4 +188,3 @@ func _on_right_area_body_exited(body: Node2D) -> void:
 
 func _on_left_area_body_exited(body: Node2D) -> void:
 	bodyExited(body, get_node("LeftArea/CollisionShape2D"), "Left")
->>>>>>> f6084fa16df37cc7c7edeedd7336c27b3ad1270b
