@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://btpw2rejh1pe4"]
+[gd_scene load_steps=7 format=4 uid="uid://btpw2rejh1pe4"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
 [ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="2_ksc7s"]
+[ext_resource type="Script" path="res://Scripts/wire_tile_map.gd" id="2_m1hq3"]
 [ext_resource type="Script" path="res://Scripts/tile_map_layer.gd" id="2_w5ved"]
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
@@ -10,8 +11,9 @@
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 
-[node name="WireTileMap" type="TileMapLayer" parent="."]
+[node name="WireTileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(1, 1)
+script = ExtResource("2_m1hq3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.75, 0.75)

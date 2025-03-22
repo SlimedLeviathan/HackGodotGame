@@ -1,5 +1,7 @@
 extends Node2D
 
+var rng = RandomNumberGenerator.new()
+
 var levelEditor = preload("res://Scenes/LevelEditor.tscn").instantiate()
 func changeToLevelEditor():
 	# hide old scene
@@ -17,7 +19,13 @@ func changeToLevelEditor():
 	get_node("Character").setPaused(true)
 	
 func changeToMainGame():
-	print("Main Game Time!")
+	# get a random level, and set it to the current tilemaplayer
+	var files = DirAccess.get_files_at("res://Levels/Game")
+	
+	get_node("TileMapLayer").loadLevel(files[rng.randi_range(0,files.size() - 1)].get_basename())
+
+	get_node("LevelEditorCollision").queue_free()
+	get_node("MainGameCollision").queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -29,3 +29,5 @@ res://Scripts/block_list.gd
 res://Scenes/editor_wire_tml.gd
 res://Levels/User Levels/A specific name.txt
 res://TileSets/GlobalTileSet.tres
+res://Scenes/wire_tile_map.gd
+res://Scripts/wire_tile_map.gd

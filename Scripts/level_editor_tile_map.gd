@@ -141,10 +141,10 @@ func saveLevel(levelName:String) ->void:
 	var saveFile = FileAccess.open("res://Levels/User Levels/" + levelName + ".txt", FileAccess.WRITE)
 	
 	if (saveFile != null):
-		saveFile.store_string(str(startPos))
-		saveFile.store_string(str(endPos))
-		saveFile.store_string(getLevelData())
-		saveFile.store_string(get_parent().get_node("WireTileMapLayer").getLevelData())
+		saveFile.store_string(str(startPos) + "\n")
+		saveFile.store_string(str(endPos) + "\n")
+		saveFile.store_string(getLevelData() + "\n")
+		saveFile.store_string(get_parent().get_node("WireTileMapLayer").getWireData())
 		
 		# almost forgot about good code practicing for a second there
 		saveFile.flush()

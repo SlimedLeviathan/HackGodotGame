@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://hdcmgd4okgw"]
 
 [ext_resource type="TileSet" uid="uid://l3udiejajexh" path="res://TileSets/Wires.tres" id="1_ucffd"]
-[ext_resource type="Script" path="res://Scenes/editor_wire_tml.gd" id="2_cls28"]
+[ext_resource type="Script" path="res://Scripts/editor_wire_tml.gd" id="2_cls28"]
 [ext_resource type="Script" path="res://Scripts/level_editor_tile_map.gd" id="3_7tugd"]
 [ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="3_hi4do"]
 [ext_resource type="Script" path="res://Scripts/close_objects_button.gd" id="4_5f2x0"]
