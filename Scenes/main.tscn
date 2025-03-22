@@ -49,6 +49,7 @@ sources/1 = SubResource("TileSetAtlasSource_eixct")
 sources/2 = SubResource("TileSetAtlasSource_iui1d")
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(0.1, 0.1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.75, 0.75)
