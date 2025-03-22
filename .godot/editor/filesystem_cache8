@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1742610986
+icon.svg::CompressedTexture2D::5362236494570387569::1742606557::1742606584::1::::<><>::
+spawnRoom.gd::GDScript::-1::1742607434::0::1::::<>Node<>::
+::res://addons/::1742606712
+::res://addons/godot-git-plugin/::1742610962
+::res://addons/godot-git-plugin/win64/::1742610962
+::res://Levels/::1742610053
+Level1.txt::TextFile::-1::1742609951::0::1::::<><>::
+Level2.txt::TextFile::-1::1742609996::0::1::::<><>::
+Level3.txt::TextFile::-1::1742610020::0::1::::<><>::
+Level4.txt::TextFile::-1::1742610041::0::1::::<><>::
+Level5.txt::TextFile::-1::1742610053::0::1::::<><>::
+::res://Scenes/::1742610892
+main.tscn::PackedScene::3752359268898390081::1742610892::0::1::::<><>::uid://cinris5gi4b3n::::res://icon.svg<>res://Scenes/tile_map_layer.gd
+tile_map_layer.gd::GDScript::-1::1742610604::0::1::::<>TileMapLayer<>::
