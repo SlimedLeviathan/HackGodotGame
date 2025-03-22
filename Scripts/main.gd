@@ -26,7 +26,3 @@ func _ready() -> void:
 	
 	self.get_node("LevelEditorCollision").get_node("Area2D").setFunction(editorFunc)
 	self.get_node("MainGameCollision").get_node("Area2D").setFunction(gameFunc)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
