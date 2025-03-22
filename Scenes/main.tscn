@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=4 uid="uid://btpw2rejh1pe4"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_hpndb"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
 [ext_resource type="Texture2D" uid="uid://cciy1853h3o6v" path="res://art/TileMap1.png" id="1_tle2d"]
 [ext_resource type="Texture2D" uid="uid://dy20g38nm2l8q" path="res://art/TileMap2.png" id="2_knp28"]
-[ext_resource type="Script" path="res://Scenes/tile_map_layer.gd" id="2_w5ved"]
+[ext_resource type="Script" path="res://Scripts/tile_map_layer.gd" id="2_w5ved"]
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
 

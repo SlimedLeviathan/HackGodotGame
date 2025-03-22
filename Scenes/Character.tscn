@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://davbgr770oij2"]
 
-[ext_resource type="Script" path="res://Scenes/character.gd" id="1_v7gqa"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_v7gqa"]
 [ext_resource type="Texture2D" uid="uid://deoauw3ieie4q" path="res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png" id="2_y7fe5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpryf"]

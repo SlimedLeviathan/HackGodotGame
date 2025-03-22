@@ -1,7 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742622313
-icon.svg::CompressedTexture2D::5362236494570387569::1742622240::1742622315::1::::<><>::
-spawnRoom.gd::GDScript::-1::1742617634::0::1::::<>Node<>::
+::res://::1742623569
 ::res://addons/::1742619315
 ::res://addons/godot-git-plugin/::1742620597
 git_plugin.gdextension::GDExtension::-1::1742617634::0::1::::<><>::
@@ -10,7 +8,7 @@ THIRDPARTY.md::TextFile::-1::1742617634::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1742617634
 ::res://addons/godot-git-plugin/macos/::1742617634
 ::res://addons/godot-git-plugin/win64/::1742622305
-::res://art/::1742619394
+::res://art/::1742622315
 astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png::CompressedTexture2D::7468955629203743098::1742617634::1742617667::1::::<><>::
 icon.svg::CompressedTexture2D::5362236494570387569::1742617634::1742622315::1::::<><>::
 TileMap1.png::CompressedTexture2D::4931239496060018747::1742618564::1742622315::1::::<><>::
@@ -21,10 +19,12 @@ Level2.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level3.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level4.txt::TextFile::-1::1742617634::0::1::::<><>::
 Level5.txt::TextFile::-1::1742617634::0::1::::<><>::
-::res://Scenes/::1742622240
-character.gd::GDScript::-1::1742617634::0::1::::<>CharacterBody2D<>::
-Character.tscn::PackedScene::7202686359489349869::1742622240::0::1::::<><>::res://Scenes/character.gd<>uid://deoauw3ieie4q::::res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png
-collide_area.gd::GDScript::-1::1742621845::0::1::::<>Area2D<>::
-CollisionArea.tscn::PackedScene::5704797682882862972::1742620058::0::1::::<><>::
-main.tscn::PackedScene::3752359268898390081::1742622240::0::1::::<><>::uid://cinris5gi4b3n::::res://icon.svg<>res://Scenes/tile_map_layer.gd<>uid://davbgr770oij2::::res://Scenes/Character.tscn
-tile_map_layer.gd::GDScript::-1::1742622240::0::1::::<>TileMapLayer<>::
+::res://Scenes/::1742623494
+character.gd::GDScript::-1::1742622748::0::1::::<>CharacterBody2D<>::
+Character.tscn::PackedScene::7202686359489349869::1742623574::0::1::::<><>::res://Scenes/character.gd<>uid://deoauw3ieie4q::::res://art/astronaut-spacesuit-flat-vector-illustration-260nw-1484360663.png
+collide_area.gd::GDScript::-1::1742623494::0::1::::<>Area2D<>::
+CollisionArea.tscn::PackedScene::5704797682882862972::1742623574::0::1::::<><>::res://Scenes/collide_area.gd
+main.gd::GDScript::-1::1742623368::0::1::::<>Node2D<>::
+main.tscn::PackedScene::3752359268898390081::1742623574::0::1::::<><>::res://Scenes/main.gd<>uid://cciy1853h3o6v::::res://art/TileMap1.png<>uid://dy20g38nm2l8q::::res://art/TileMap2.png<>res://Scenes/tile_map_layer.gd<>uid://davbgr770oij2::::res://Scenes/Character.tscn<>uid://cnjpgjd6f1ia3::::res://Scenes/CollisionArea.tscn
+tile_map_layer.gd::GDScript::-1::1742622519::0::1::::<>TileMapLayer<>::
+::res://Scripts/::1742623569
