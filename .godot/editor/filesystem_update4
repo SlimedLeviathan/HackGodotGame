@@ -1,2 +1,4 @@
 res://Scenes/main.tscn
+res://Scenes/tile_map_layer.gd
 res://Scenes/Character.tscn
+res://Scenes/CollisionArea.tscn

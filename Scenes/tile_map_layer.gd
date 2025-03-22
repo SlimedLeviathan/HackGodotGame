@@ -10,11 +10,11 @@ func _ready() -> void:
 	#Load the character scene
 	#character_scene = preload("res://Scenes/Character.tscn")
 	
-	var levelFolder = DirAccess.open("res://Levels")
-	
-	var files = levelFolder.get_files()
-	
-	loadLevel(files[rng.randi_range(0,files.size() - 1)].split(".")[0])
+	#var levelFolder = DirAccess.open("res://Levels")
+	#
+	#var files = levelFolder.get_files()
+	#
+	#loadLevel(files[rng.randi_range(0,files.size() - 1)].split(".")[0])
 	#saveLevel("Level5", getLevelData())
 	
 	#Add the character to the scene at a specific position
