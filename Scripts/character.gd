@@ -9,7 +9,6 @@ const GRAVITY = 980.0  # Set gravity manually if get_gravity() isn't available
 var facing_right = true  # Track direction
 var paused = false  # Used for pausing movement
 
-<<<<<<< HEAD
 var health = 5 # Player hearts
 func take_damage():
 	health -= 1
@@ -27,11 +26,9 @@ func die():
 		print("Player has respawned.")
 	else:
 		print("Player has died")
-=======
 var wallHolding = 0
 
 var lastEntered = {}
->>>>>>> f6084fa16df37cc7c7edeedd7336c27b3ad1270b
 
 var walk_frame_timer = 0.0  # Timer to alternate walk animations
 const WALK_ANIM_SWITCH_TIME = 0.2  # Time interval to switch walk animations
@@ -106,8 +103,6 @@ func _physics_process(delta: float) -> void:
 func setPaused(pause: bool) -> void:
 	paused = pause
 	
-<<<<<<< HEAD
-=======
 func tileInteract(block, direction):
 	# wavy walls
 	if block[2] == 6:
