@@ -7,7 +7,7 @@ var rightPressed = false
 var extraPos = [0,0]
 
 var defaultStart = [0,0]
-var defaultEnd = [1,0]
+var defaultEnd = [10,0]
 
 var prevStartPos = [0,0]
 var prevEndPos = [1,0]
@@ -18,6 +18,9 @@ var previousBlock = null
 
 var movingStart = false
 var movingEnd = false
+
+func _ready() -> void:
+	resetLevel()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var position = event.position - Vector2(viewport.get_window().size.x / 2,viewport.get_window().size.y / 2)
@@ -33,14 +36,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 					movingStart = true
 					prevStartPos = [coords.x, coords.y]
 					previousBlock = null
-					
-					print("move start")
 				elif (coords.x == endPos[0] and coords.y == endPos[1]):
 					movingEnd = true
 					prevEndPos = [coords.x, coords.y]
 					previousBlock = null
-					
-					print("move end")
 				else:
 					setCell(coords)
 					
@@ -66,6 +65,14 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	elif movingStart or movingEnd:
 		var prevPos = Vector2()
 		var block = []
+		var newBlock = null
+		
+		var atlasCoords = get_cell_atlas_coords(coords)
+		var id = get_cell_source_id(coords)
+		if (id != 0 and id != 3):
+			newBlock = [atlasCoords.x, atlasCoords.y, id]
+		else:
+			newBlock = [null]
 		
 		if movingStart:
 			prevPos.x = startPos[0]
@@ -81,14 +88,12 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		setCellToBlock(prevPos, previousBlock)
 		setCellToBlock(coords, block)
 		
-		print("Moving start or end")
-		
-		var atlasCoords = get_cell_atlas_coords(coords)
-		
-		previousBlock = [atlasCoords.x, atlasCoords.y, get_cell_source_id(coords)]
+		if (newBlock[0] != null):
+			previousBlock = newBlock
 		
 	elif leftPressed:
-		setCell(coords)
+		if not((coords.x == startPos[0] and coords.y == startPos[1]) or (coords.x == endPos[0] and coords.y == endPos[1])):
+			setCell(coords)
 	
 	elif rightPressed:
 		extraPos[0] -= event.relative[0]
