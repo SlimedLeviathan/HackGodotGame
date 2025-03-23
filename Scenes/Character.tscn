@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://davbgr770oij2"]
+[gd_scene load_steps=18 format=3 uid="uid://davbgr770oij2"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_v7gqa"]
 [ext_resource type="Texture2D" uid="uid://cpu6tfoujbw07" path="res://art/Illustration30_1.png" id="2_2uwd3"]
@@ -82,8 +82,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ks2x"]
+size = Vector2(20, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mijt6"]
+size = Vector2(20, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7r04"]
+size = Vector2(20, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg56f"]
+size = Vector2(20, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0twyb"]
 size = Vector2(43, 14)
@@ -94,6 +102,7 @@ size = Vector2(43, 14)
 size = Vector2(41, 53)
 
 [node name="Character" type="CharacterBody2D"]
+position = Vector2(2, 73)
 script = ExtResource("1_v7gqa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,15 +123,29 @@ zoom = Vector2(2, 2)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
-position = Vector2(-41, -71)
+position = Vector2(-41, -104.5)
 shape = SubResource("RectangleShape2D_3ks2x")
+
+[node name="BottomLeftArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftArea"]
+position = Vector2(-40, -19)
+shape = SubResource("RectangleShape2D_mijt6")
 
 [node name="RightArea" type="Area2D" parent="."]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
-position = Vector2(40, -70)
+position = Vector2(32, -103.5)
 shape = SubResource("RectangleShape2D_x7r04")
+
+[node name="BottomRightArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightArea"]
+position = Vector2(33, -18)
+shape = SubResource("RectangleShape2D_hg56f")
 
 [node name="BottomArea" type="Area2D" parent="."]
 collision_mask = 3
@@ -147,8 +170,12 @@ shape = SubResource("RectangleShape2D_li4c3")
 
 [connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
 [connection signal="body_exited" from="LeftArea" to="." method="_on_left_area_body_exited"]
+[connection signal="body_entered" from="BottomLeftArea" to="." method="_on_bottom_left_area_body_entered"]
+[connection signal="body_exited" from="BottomLeftArea" to="." method="_on_bottom_left_area_body_exited"]
 [connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]
 [connection signal="body_exited" from="RightArea" to="." method="_on_right_area_body_exited"]
+[connection signal="body_entered" from="BottomRightArea" to="." method="_on_bottom_right_area_body_entered"]
+[connection signal="body_exited" from="BottomRightArea" to="." method="_on_bottom_right_area_body_exited"]
 [connection signal="body_entered" from="BottomArea" to="." method="_on_bottom_area_body_entered"]
 [connection signal="body_exited" from="BottomArea" to="." method="_on_bottom_area_body_exited"]
 [connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]

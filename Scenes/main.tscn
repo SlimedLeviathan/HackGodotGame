@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://btpw2rejh1pe4"]
+[gd_scene load_steps=11 format=4 uid="uid://btpw2rejh1pe4"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
 [ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="2_ksc7s"]
@@ -8,13 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
 [ext_resource type="Texture2D" uid="uid://bpjulqjk0g1cl" path="res://art/heart.png" id="8_wai1h"]
+[ext_resource type="Texture2D" uid="uid://quhwjkjvhib3" path="res://art/coin.png" id="9_2b3jy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jvo1i"]
+font_size = 150
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 
 [node name="WireTileMapLayer" type="TileMapLayer" parent="."]
-scale = Vector2(0.563, 0.563)
+z_index = 1
+scale = Vector2(8.5, 8.5)
 tile_set = ExtResource("2_s75sh")
 script = ExtResource("2_m1hq3")
 
@@ -38,21 +43,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HeartContainer" type="Control" parent="Character/UIControl"]
+[node name="HeartContainer" type="VBoxContainer" parent="Character/UIControl"]
 layout_mode = 1
-anchors_preset = 0
-offset_left = -1152.0
-offset_top = -648.0
-offset_right = -1112.0
-offset_bottom = -608.0
+offset_left = -2879.0
+offset_top = -1609.0
+offset_right = -1063.0
+offset_bottom = -1050.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Character/UIControl/HeartContainer"]
-layout_mode = 1
-offset_left = -1717.0
-offset_top = -971.0
-offset_right = -1357.0
-offset_bottom = -611.0
-scale = Vector2(1, 1.041)
+layout_mode = 2
 
 [node name="Heart" type="TextureRect" parent="Character/UIControl/HeartContainer/HBoxContainer"]
 layout_mode = 2
@@ -73,6 +72,18 @@ texture = ExtResource("8_wai1h")
 [node name="Heart5" type="TextureRect" parent="Character/UIControl/HeartContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_wai1h")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Character/UIControl/HeartContainer"]
+layout_mode = 2
+
+[node name="Coin" type="TextureRect" parent="Character/UIControl/HeartContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("9_2b3jy")
+
+[node name="Label" type="Label" parent="Character/UIControl/HeartContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_jvo1i")
 
 [node name="MainGameCollision" parent="." instance=ExtResource("6_pjgwt")]
 position = Vector2(2000, -290)

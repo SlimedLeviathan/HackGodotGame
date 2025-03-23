@@ -29,11 +29,15 @@ func power(coords, direction, on):
 		if on:
 			newAtlasCoords.y = 1
 		
-		set_cell(coords, 2,newAtlasCoords)
+		set_cell(coords, 2, newAtlasCoords)
 		
 		for connection in wireDict[atlasCoords[0]]:
-			if not (connection[0] == direction[0] and connection[1] == direction[1]):
-				nextPowered.append([Vector2i(coords[0] - connection[0], coords[1] - connection[1]), direction, on])
+			var connCoords = Vector2i(coords[0] + connection[0], coords[1] + connection[1])
+			
+			var connAtlas = get_cell_atlas_coords(connCoords)
+	
+			if (connAtlas.y == 1) != on:
+				nextPowered.append([connCoords, connection, on])
 
 var wireDict = {
 	0:[[-1,0],[1,0]],
@@ -54,7 +58,7 @@ func getConnected(atlasX, direction) -> bool:
 	var connect = false
 	
 	for connection in wire:
-		if (connection[0] == direction[0] and connection[1] == direction[1]):
+		if (-connection[0] == direction[0] and -connection[1] == direction[1]):
 			connect = true
 			break
 	

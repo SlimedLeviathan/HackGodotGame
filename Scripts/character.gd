@@ -202,7 +202,7 @@ func _on_middle_area_body_entered(body: Node2D) -> void:
 	# im using this for the switches that way we dont have problems with the separate hitboxes
 	if body != self and is_instance_of(body, TileMapLayer):
 		var tml = body as TileMapLayer
-		var area = get_node("MiddleArea/CollisionShape2D")
+		var area:CollisionShape2D = get_node("MiddleArea/CollisionShape2D")
 		
 		var globPos = area.to_global(area.position)
 		
@@ -215,3 +215,18 @@ func _on_middle_area_body_entered(body: Node2D) -> void:
 		if block[2] == 9:
 			get_parent().get_node("TileMapLayer").powerTile(tileCoords,block[1] != 1)
 			
+
+
+func _on_bottom_left_area_body_entered(body: Node2D) -> void:
+	bodyEntered(body, get_node("BottomLeftArea/CollisionShape2D"), "Left")
+
+func _on_bottom_left_area_body_exited(body: Node2D) -> void:
+	bodyExited(body, get_node("BottomLeftArea/CollisionShape2D"), "Left")
+
+
+func _on_bottom_right_area_body_entered(body: Node2D) -> void:
+	bodyEntered(body, get_node("BottomRightArea/CollisionShape2D"), "Right")
+
+
+func _on_bottom_right_area_body_exited(body: Node2D) -> void:
+	bodyExited(body, get_node("BottomRightArea/CollisionShape2D"), "Right")
