@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://btpw2rejh1pe4"]
+[gd_scene load_steps=8 format=4 uid="uid://btpw2rejh1pe4"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
 [ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="2_ksc7s"]
 [ext_resource type="Script" path="res://Scripts/wire_tile_map.gd" id="2_m1hq3"]
+[ext_resource type="TileSet" uid="uid://l3udiejajexh" path="res://TileSets/Wires.tres" id="2_s75sh"]
 [ext_resource type="Script" path="res://Scripts/tile_map_layer.gd" id="2_w5ved"]
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
@@ -12,16 +13,45 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_hpndb")
 
 [node name="WireTileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_s75sh")
 script = ExtResource("2_m1hq3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.75, 0.75)
-tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQACAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7//3/AQACAAIAAAD7//z/BgAAAAEAAAD7//v/BgAAAAEAAAD7//r/BgAAAAEAAAD7//n/BgAAAAEAAAAGAP3/AQAAAAIAAAAGAPz/AQAAAAEAAAAGAPv/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPn/AQAAAAEAAAABAP7/AQAAAAIAAAACAP7/AQACAAIAAAACAP3/AQACAAAAAAABAP3/AQAAAAAAAAD6////AQACAAEAAAD6//7/AQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQACAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9/wAAAQABAAAAAAD8/wAAAQABAAAAAAD7/wAAAQAAAAAAAAD7//3/AQACAAIAAAD7//z/BgAAAAEAAAD7//v/BgAAAAEAAAD7//r/BgAAAAEAAAD7//n/BgAAAAEAAAAGAP3/AQAAAAIAAAAGAPz/AQAAAAEAAAAGAPv/AQAAAAEAAAAGAPr/AQAAAAEAAAAGAPn/AQAAAAEAAAABAP7/AQAAAAIAAAACAP7/AQACAAIAAAACAP3/AQACAAAAAAABAP3/AQAAAAAAAAD6////AQACAAEAAAD6//7/AQACAAEAAAABAP//BwAAAAAAAAD+//7/BwAAAAEAAAA=")
 tile_set = ExtResource("2_ksc7s")
 script = ExtResource("2_w5ved")
 
 [node name="Character" parent="." instance=ExtResource("3_2i4da")]
 position = Vector2(69, -51)
+
+[node name="Control" type="Control" parent="Character"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartContainer" type="Control" parent="Character/Control"]
+anchors_preset = 0
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = -1112.0
+offset_bottom = -608.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Character/Control/HeartContainer"]
+layout_mode = 0
+offset_left = -1717.0
+offset_top = -971.0
+offset_right = -1677.0
+offset_bottom = -931.0
+scale = Vector2(6.24294, 6.49578)
+
+[node name="Heart" type="TextureRect" parent="Character/Control/HeartContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Character/Control/HeartContainer/HBoxContainer"]
+layout_mode = 2
+text = "+ 5"
 
 [node name="LevelEditorCollision" parent="." instance=ExtResource("6_pjgwt")]
 position = Vector2(-1310, -270)

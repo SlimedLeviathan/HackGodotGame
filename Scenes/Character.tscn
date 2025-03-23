@@ -97,15 +97,15 @@ script = ExtResource("1_v7gqa")
 position = Vector2(-1, -74)
 shape = SubResource("RectangleShape2D_kpryf")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(0.25, 0.25)
-zoom = Vector2(2, 2)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(21, -37)
 scale = Vector2(0.669173, 0.654167)
 sprite_frames = SubResource("SpriteFrames_h0c21")
 animation = &"walk_right_2"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.25, 0.25)
+zoom = Vector2(2, 2)
 
 [node name="LeftArea" type="Area2D" parent="."]
 collision_mask = 3

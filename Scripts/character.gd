@@ -13,7 +13,6 @@ var health = 5 # Player hearts
 func take_damage():
 	health -= 1
 	die()
-	print("Player has", health, "hearts left")
 	# set invincibility
 		
 func die():
@@ -104,6 +103,10 @@ func tileInteract(block, direction):
 	# end door
 	if (block[2] == 3):
 		get_node("/root/Main").newLevel()
+		
+	# spike
+	if block[2] == 5:
+		self.take_damage()
 		
 	# wavy walls
 	if block[2] == 6:
