@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b50a6jcqxrxgq"]
+[gd_scene load_steps=8 format=3 uid="uid://b50a6jcqxrxgq"]
 
 [ext_resource type="Script" path="res://Scenes/slime.gd" id="1_aj0uq"]
 [ext_resource type="Texture2D" uid="uid://dfd4xejr801vn" path="res://art/Illustration43.png" id="2_ksmoh"]
@@ -31,23 +31,41 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmdbp"]
-radius = 138.0
-height = 328.0
+radius = 55.0
+height = 110.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2c20"]
+radius = 79.0063
 
 [node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_aj0uq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(124.5, 98.5)
-scale = Vector2(0.993519, 1.01296)
+position = Vector2(30, 93)
+scale = Vector2(0.362963, 0.435184)
 sprite_frames = SubResource("SpriteFrames_3k12k")
-animation = &"grounded"
+animation = &"flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 99)
+position = Vector2(33, 135)
 shape = SubResource("CapsuleShape2D_hmdbp")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
+autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-31, 30)
+target_position = Vector2(20, 50)
+collision_mask = 7
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(12, 91)
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(19, 44)
+shape = SubResource("CircleShape2D_v2c20")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

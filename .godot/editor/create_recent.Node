@@ -1,13 +1,12 @@
+CollisionShape2D
+Area2D
+RayCast2D
 Label
 TextureRect
 HBoxContainer
 Control
-RayCast2D
 Timer
-CollisionShape2D
 TileMapLayer
-CollisionShape2D
-Area2D
 AnimatedSprite2D
 CharacterBody2D
 Button

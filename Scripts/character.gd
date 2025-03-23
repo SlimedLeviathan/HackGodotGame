@@ -13,12 +13,8 @@ var health = 5 # Player hearts
 func take_damage():
 	health -= 1
 	die()
-<<<<<<< HEAD
 	print("Player has", health, "hearts left")
-=======
-	# set invincibility
->>>>>>> fe631c2c2eeff03f770cdb7408070cec5c42f3b4
-		
+
 func die():
 	if health > 0:
 		position = Vector2(0,0)
