@@ -2,6 +2,8 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
+var coins = 0
+
 var levelEditor = preload("res://Scenes/LevelEditor.tscn").instantiate()
 func changeToLevelEditor():
 	# hide old scene
@@ -22,7 +24,11 @@ func newLevel():
 	var files = DirAccess.get_files_at("res://Levels/Game")
 	
 	get_node("TileMapLayer").loadLevel(files[rng.randi_range(0,files.size() - 1)].get_basename())
-	
+
+func addCoin():
+	coins += 1
+	get_node("Character/UIControl/HeartContainer/HBoxContainer2/Label").text = str(coins)
+
 func changeToMainGame():
 	newLevel()
 	

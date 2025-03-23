@@ -99,7 +99,7 @@ size = Vector2(43, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cegb8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4c3"]
-size = Vector2(41, 53)
+size = Vector2(50, 91)
 
 [node name="Character" type="CharacterBody2D"]
 position = Vector2(2, 73)
@@ -165,7 +165,7 @@ shape = SubResource("RectangleShape2D_cegb8")
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
-position = Vector2(-0.5, -72.5)
+position = Vector2(-3, -73.5)
 shape = SubResource("RectangleShape2D_li4c3")
 
 [connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]

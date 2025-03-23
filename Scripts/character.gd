@@ -107,6 +107,12 @@ func setPaused(pause: bool) -> void:
 	paused = pause
 	
 func tileInteract(block, direction):
+	# coin
+	if block[2] == 8:
+		# add one to coins
+		get_node("/root/Main").addCoin()
+		return "Remove"
+	
 	# end door
 	if (block[2] == 3):
 		get_node("/root/Main").newLevel()
@@ -148,7 +154,8 @@ func bodyEntered(body, area, direction):
 			
 			var block = [atlasCoords.x, atlasCoords.y, tml.get_cell_source_id(tileCoords)]
 			
-			tileInteract(block, direction)
+			if (tileInteract(block, direction) == "Remove"):
+				tml.set_cell(tileCoords)
 
 func bodyExited(body:Node2D, area:CollisionShape2D, direction):
 	if (body != self):
