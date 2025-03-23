@@ -18,12 +18,14 @@ func changeToLevelEditor():
 	# turn off character movement
 	get_node("Character").setPaused(true)
 	
-func changeToMainGame():
-	# get a random level, and set it to the current tilemaplayer
+func newLevel():
 	var files = DirAccess.get_files_at("res://Levels/Game")
 	
 	get_node("TileMapLayer").loadLevel(files[rng.randi_range(0,files.size() - 1)].get_basename())
-
+	
+func changeToMainGame():
+	newLevel()
+	
 	get_node("LevelEditorCollision").queue_free()
 	get_node("MainGameCollision").queue_free()
 

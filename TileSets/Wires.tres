@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://l3udiejajexh"]
 
-[ext_resource type="Texture2D" uid="uid://cr1n1qt6ii231" path="res://art/WireTileMap.png" id="1_byqyr"]
+[ext_resource type="Texture2D" uid="uid://cr1n1qt6ii231" path="res://art/WireTileMap.png" id="1_6xhr0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dr8h7"]
 resource_name = "Wires"
-texture = ExtResource("1_byqyr")
+texture = ExtResource("1_6xhr0")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -17,6 +17,7 @@ texture_region_size = Vector2i(32, 32)
 8:0/0 = 0
 9:0/0 = 0
 10:0/0 = 0
+10:1/next_alternative_id = 4
 10:1/0 = 0
 9:1/0 = 0
 8:1/0 = 0
