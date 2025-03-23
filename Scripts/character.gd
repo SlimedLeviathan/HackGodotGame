@@ -20,8 +20,12 @@ func take_damage():
 	
 	die()
 	print("Player has", health, "hearts left")
+<<<<<<< HEAD
+
+=======
 	# set invincibility
 		
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 func die():
 	if health > 0:
 		position = Vector2(0,0)

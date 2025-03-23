@@ -161,12 +161,17 @@ collision_mask = 3
 position = Vector2(-3, -182)
 shape = SubResource("RectangleShape2D_cegb8")
 
+<<<<<<< HEAD
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 6
+=======
 [node name="MiddleArea" type="Area2D" parent="."]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
 position = Vector2(-3, -73.5)
 shape = SubResource("RectangleShape2D_li4c3")
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 
 [connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
 [connection signal="body_exited" from="LeftArea" to="." method="_on_left_area_body_exited"]

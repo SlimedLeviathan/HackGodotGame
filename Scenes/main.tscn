@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=9 format=4 uid="uid://btpw2rejh1pe4"]
+=======
 [gd_scene load_steps=11 format=4 uid="uid://btpw2rejh1pe4"]
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hpndb"]
 [ext_resource type="TileSet" uid="uid://d3f4o6jmfcfdk" path="res://TileSets/GlobalTileSet.tres" id="2_ksc7s"]
@@ -7,11 +11,15 @@
 [ext_resource type="Script" path="res://Scripts/tile_map_layer.gd" id="2_w5ved"]
 [ext_resource type="PackedScene" uid="uid://davbgr770oij2" path="res://Scenes/Character.tscn" id="3_2i4da"]
 [ext_resource type="PackedScene" uid="uid://cnjpgjd6f1ia3" path="res://Scenes/CollisionArea.tscn" id="6_pjgwt"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://b50a6jcqxrxgq" path="res://Scenes/Slime.tscn" id="8_jjokm"]
+=======
 [ext_resource type="Texture2D" uid="uid://bpjulqjk0g1cl" path="res://art/heart.png" id="8_wai1h"]
 [ext_resource type="Texture2D" uid="uid://quhwjkjvhib3" path="res://art/coin.png" id="9_2b3jy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvo1i"]
 font_size = 150
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 
 [node name="Main" type="Node2D"]
 scale = Vector2(0.1, 0.1)
@@ -87,3 +95,5 @@ label_settings = SubResource("LabelSettings_jvo1i")
 
 [node name="MainGameCollision" parent="." instance=ExtResource("6_pjgwt")]
 position = Vector2(2000, -290)
+
+[node name="Slime" parent="." instance=ExtResource("8_jjokm")]
