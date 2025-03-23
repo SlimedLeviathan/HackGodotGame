@@ -1,7 +1,7 @@
-res://Scenes/Character.tscn
+res://Scenes/main.tscn
 res://TileSets/Wires.tres
 res://TileSets/GlobalTileSet.tres
-res://Scripts/character.gd
-res://Scenes/main.tscn
+res://Scenes/Character.tscn
 res://Scenes/Slime.tscn
+res://Scripts/character.gd
 res://Scenes/slime.gd

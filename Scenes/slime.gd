@@ -13,12 +13,11 @@ func _ready():
 
 func _physics_process(delta):
 	# Apply gravity
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
-		anim.play("flying")
-	else:
-		velocity.x / 10
+	if is_on_floor() and anim.animation != "grounded":
 		anim.play("grounded")
+	elif not is_on_floor() and anim.animation != "flying":
+		anim.play("flying")
+
 
 	# Move the slime
 	velocity.x = direction * SPEED
@@ -32,12 +31,13 @@ func _on_Timer_timeout():
 	anim.play("flying")  # Play jump animation
 
 	# Randomly change direction (if no walls detected)
-	if randi() % 2 == 0:
+	if is_on_wall():
 		direction *= -1  # Flip direction
 
 	# Restart timer
 	jump_timer.start()
 
 func _on_Hitbox_body_entered(body):
-	if body.is_in_group("player"):  # Make sure the player is in the correct group
-		body.take_damage(1)  # Call player's damage function
+	if body.is_in_group("player") and body is CharacterBody2D:
+		body.take_damage()
+ # Call player's damage function

@@ -14,11 +14,6 @@ func take_damage():
 	health -= 1
 	die()
 	print("Player has", health, "hearts left")
-	
-	if health <= 0:
-		die()
-	#else:
-		#beconme_invincible()
 		
 func die():
 	if health > 0:
