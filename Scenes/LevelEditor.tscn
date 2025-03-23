@@ -39,6 +39,7 @@ scale = Vector2(100, 100)
 shape = SubResource("RectangleShape2D_u87nu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 3
 
 [node name="Control" type="Control" parent="Camera2D"]
 layout_mode = 3

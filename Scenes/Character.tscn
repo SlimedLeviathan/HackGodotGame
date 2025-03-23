@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://davbgr770oij2"]
+[gd_scene load_steps=16 format=3 uid="uid://davbgr770oij2"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_v7gqa"]
 [ext_resource type="Texture2D" uid="uid://cpu6tfoujbw07" path="res://art/Illustration30_1.png" id="2_2uwd3"]
@@ -90,6 +90,9 @@ size = Vector2(43, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cegb8"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li4c3"]
+size = Vector2(41, 53)
+
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_v7gqa")
 
@@ -135,6 +138,13 @@ collision_mask = 3
 position = Vector2(-3, -182)
 shape = SubResource("RectangleShape2D_cegb8")
 
+[node name="MiddleArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
+position = Vector2(-0.5, -72.5)
+shape = SubResource("RectangleShape2D_li4c3")
+
 [connection signal="body_entered" from="LeftArea" to="." method="_on_left_area_body_entered"]
 [connection signal="body_exited" from="LeftArea" to="." method="_on_left_area_body_exited"]
 [connection signal="body_entered" from="RightArea" to="." method="_on_right_area_body_entered"]
@@ -143,3 +153,4 @@ shape = SubResource("RectangleShape2D_cegb8")
 [connection signal="body_exited" from="BottomArea" to="." method="_on_bottom_area_body_exited"]
 [connection signal="body_entered" from="TopArea" to="." method="_on_top_area_body_entered"]
 [connection signal="body_exited" from="TopArea" to="." method="_on_top_area_body_exited"]
+[connection signal="body_entered" from="MiddleArea" to="." method="_on_middle_area_body_entered"]

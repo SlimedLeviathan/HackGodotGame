@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gpgw6dauuao7"
-path="res://.godot/imported/doorTileMap.png-0620ec3724f4a7b7f835b2e16227a45b.ctex"
+uid="uid://b4drl2t1xih5k"
+path="res://.godot/imported/leverTileMap.png-1bbca731d5ad1ac799a87cbe7874ab76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/doorTileMap.png"
-dest_files=["res://.godot/imported/doorTileMap.png-0620ec3724f4a7b7f835b2e16227a45b.ctex"]
+source_file="res://art/leverTileMap.png"
+dest_files=["res://.godot/imported/leverTileMap.png-1bbca731d5ad1ac799a87cbe7874ab76.ctex"]
 
 [params]
 

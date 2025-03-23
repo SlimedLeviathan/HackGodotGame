@@ -1,12 +1,4 @@
 res://Scenes/main.tscn
-<<<<<<< HEAD
-res://TileSets/Wires.tres
-res://TileSets/GlobalTileSet.tres
-res://Scenes/Character.tscn
-res://Scenes/Slime.tscn
-res://Scripts/character.gd
-res://Scenes/slime.gd
-=======
 res://Scenes/tile_map_layer.gd
 res://Scenes/Character.tscn
 res://Scenes/CollisionArea.tscn
@@ -40,4 +32,3 @@ res://TileSets/GlobalTileSet.tres
 res://Scenes/wire_tile_map.gd
 res://Scripts/wire_tile_map.gd
 res://TileSets/Wires.tres
->>>>>>> fe631c2c2eeff03f770cdb7408070cec5c42f3b4

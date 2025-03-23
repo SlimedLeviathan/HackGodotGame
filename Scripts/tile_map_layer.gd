@@ -1,20 +1,54 @@
 extends TileMapLayer
 
-# Declare the variable for the character scene.
-var character_scene : PackedScene
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func powerTile(coords, on, direction = null):
+	var atlasCoords = get_cell_atlas_coords(coords)
+	var id = get_cell_source_id(coords)
 	
-	pass # Replace with function body.
+	# door
+	if id == 7:
+		if on:
+			set_cell(coords, id, Vector2i(0,1))
+		else:
+			set_cell(coords, id, Vector2i(0,0))
+	# wavy walls
+	elif id == 6:
+		var wallID = atlasCoords.y % 2
+		
+		if on:
+			set_cell(coords, id, Vector2i(0,wallID))
+		else:
+			set_cell(coords, id, Vector2i(0,wallID + 2))
+			
+		# check above and below to see if they are wavy walls as well
+		var aboveCoords = Vector2i(coords.x, coords.y - 1)
+		var belowCoords = Vector2i(coords.x, coords.y + 1)
+		
+		if direction == null:
+			powerTile(aboveCoords, on, -1)
+			powerTile(belowCoords, on, 1)
+		elif direction == -1:
+			powerTile(aboveCoords, on, -1)
+		elif direction == 1:
+			powerTile(belowCoords, on, 1)
+	# lever (usually by the player)
+	elif id == 9:
+		if on:
+			set_cell(coords, id, Vector2i(0,1))
+		else:
+			set_cell(coords, id, Vector2i(0,0))
 
+		var wireTM = get_parent().get_node("WireTileMapLayer")
+		
+		wireTM.power(Vector2i(coords.x,coords.y + 1), [0,1],on)
+		wireTM.power(Vector2i(coords.x + 1,coords.y), [1,0],on)
+		wireTM.power(Vector2i(coords.x,coords.y - 1), [0,-1],on)
+		wireTM.power(Vector2i(coords.x - 1,coords.y), [-1,0],on)
+		
 func setLevel(level:String) -> void:
 	# set the tile map to the data from the parameter
 	
 	#the first 2 lines should be the start and endPos
 	var data = level.split("\n")
-	
-	print(data)
 	
 	var startPos = JSON.parse_string(data[0])
 	var endPos = JSON.parse_string(data[1])
