@@ -2,9 +2,17 @@ CollisionShape2D
 Area2D
 RayCast2D
 Label
+Control
 TextureRect
 HBoxContainer
+<<<<<<< HEAD
 Control
+=======
+VBoxContainer
+CollisionShape2D
+Area2D
+RayCast2D
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 Timer
 TileMapLayer
 AnimatedSprite2D

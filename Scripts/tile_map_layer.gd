@@ -1,5 +1,6 @@
 extends TileMapLayer
 
+<<<<<<< HEAD
 # Declare the variable for the character scene.
 var character_scene : PackedScene
 var slime_scene = preload("res://Scenes/Slime.tscn")
@@ -16,9 +17,58 @@ func setLevel(level: String) -> void:
 	if level.is_empty():
 		push_error("Level data is empty!")
 		return
+=======
+func powerTile(coords, on, direction = null):
+	var atlasCoords = get_cell_atlas_coords(coords)
+	var id = get_cell_source_id(coords)
+	
+	# door
+	if id == 7:
+		if on:
+			set_cell(coords, id, Vector2i(0,1))
+		else:
+			set_cell(coords, id, Vector2i(0,0))
+	# wavy walls
+	elif id == 6:
+		var wallID = atlasCoords.y % 2
+		
+		if on:
+			set_cell(coords, id, Vector2i(0,wallID))
+		else:
+			set_cell(coords, id, Vector2i(0,wallID + 2))
+			
+		# check above and below to see if they are wavy walls as well
+		var aboveCoords = Vector2i(coords.x, coords.y - 1)
+		var belowCoords = Vector2i(coords.x, coords.y + 1)
+		
+		if direction == null:
+			powerTile(aboveCoords, on, -1)
+			powerTile(belowCoords, on, 1)
+		elif direction == -1:
+			powerTile(aboveCoords, on, -1)
+		elif direction == 1:
+			powerTile(belowCoords, on, 1)
+	# lever (usually by the player)
+	elif id == 9:
+		if on:
+			set_cell(coords, id, Vector2i(0,1))
+		else:
+			set_cell(coords, id, Vector2i(0,0))
+
+		var wireTM = get_parent().get_node("WireTileMapLayer")
+		
+		wireTM.power(Vector2i(coords.x,coords.y + 1), [0,1],on)
+		wireTM.power(Vector2i(coords.x + 1,coords.y), [1,0],on)
+		wireTM.power(Vector2i(coords.x,coords.y - 1), [0,-1],on)
+		wireTM.power(Vector2i(coords.x - 1,coords.y), [-1,0],on)
+		
+func setLevel(level:String) -> void:
+	# set the tile map to the data from the parameter
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 	
 	var data = level.split("\n")
 	
+<<<<<<< HEAD
 	if data.size() < 3:
 		push_error("Invalid level data format!")
 		return
@@ -31,6 +81,12 @@ func setLevel(level: String) -> void:
 	if startPos == null or endPos == null or levelArray == null:
 		push_error("Failed to parse level JSON data!")
 		return
+=======
+	var startPos = JSON.parse_string(data[0])
+	var endPos = JSON.parse_string(data[1])
+	
+	var levelArray = JSON.parse_string(data[2])
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 	
 	self.clear()
 	

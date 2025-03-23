@@ -4,10 +4,15 @@ var nextPowered = []
 
 # this is what powers the wires once something powers them
 func _process(delta: float) -> void:
-	for next in nextPowered:
+	var next = nextPowered.pop_at(0)
+	
+	if (next != null):
 		power(next[0], next[1], next[2])
 	
 func power(coords, direction, on):	
+	# power the tile in the main tilemap
+	get_parent().get_node("TileMapLayer").powerTile(coords, on)
+	
 	# find the type of wire in the tilemap (if available)
 	var atlasCoords = get_cell_atlas_coords(coords)
 	
@@ -24,11 +29,15 @@ func power(coords, direction, on):
 		if on:
 			newAtlasCoords.y = 1
 		
-		set_cell(coords, 2,newAtlasCoords)
+		set_cell(coords, 2, newAtlasCoords)
 		
 		for connection in wireDict[atlasCoords[0]]:
-			if not (connection[0] == direction[0] and connection[1] == direction[1]):
-				nextPowered.append([[coords[0] + connection[0], coords[1] + connection[1]], direction, on])
+			var connCoords = Vector2i(coords[0] + connection[0], coords[1] + connection[1])
+			
+			var connAtlas = get_cell_atlas_coords(connCoords)
+	
+			if (connAtlas.y == 1) != on:
+				nextPowered.append([connCoords, connection, on])
 
 var wireDict = {
 	0:[[-1,0],[1,0]],
@@ -49,7 +58,7 @@ func getConnected(atlasX, direction) -> bool:
 	var connect = false
 	
 	for connection in wire:
-		if (connection[0] == direction[0] and connection[1] == direction[1]):
+		if (-connection[0] == direction[0] and -connection[1] == direction[1]):
 			connect = true
 			break
 	

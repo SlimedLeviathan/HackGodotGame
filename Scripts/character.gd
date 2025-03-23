@@ -12,9 +12,20 @@ var paused = false  # Used for pausing movement
 var health = 5 # Player hearts
 func take_damage():
 	health -= 1
+	
+	var heartUIContainer:HBoxContainer = get_node("UIControl/HeartContainer/HBoxContainer")
+	
+	heartUIContainer.remove_child(heartUIContainer.get_child(0))
+		
+	
 	die()
 	print("Player has", health, "hearts left")
+<<<<<<< HEAD
 
+=======
+	# set invincibility
+		
+>>>>>>> daa12eb4d9f5cfa2f639f4e9beb5f87283f94c78
 func die():
 	if health > 0:
 		position = Vector2(0,0)
@@ -188,3 +199,38 @@ func _on_right_area_body_exited(body: Node2D) -> void:
 
 func _on_left_area_body_exited(body: Node2D) -> void:
 	bodyExited(body, get_node("LeftArea/CollisionShape2D"), "Left")
+
+
+func _on_middle_area_body_entered(body: Node2D) -> void:
+	
+	# im using this for the switches that way we dont have problems with the separate hitboxes
+	if body != self and is_instance_of(body, TileMapLayer):
+		var tml = body as TileMapLayer
+		var area:CollisionShape2D = get_node("MiddleArea/CollisionShape2D")
+		
+		var globPos = area.to_global(area.position)
+		
+		var tileCoords = tml.local_to_map(tml.to_local(globPos))
+		
+		var atlasCoords = tml.get_cell_atlas_coords(tileCoords)
+		
+		var block = [atlasCoords.x, atlasCoords.y, tml.get_cell_source_id(tileCoords)]
+		
+		if block[2] == 9:
+			get_parent().get_node("TileMapLayer").powerTile(tileCoords,block[1] != 1)
+			
+
+
+func _on_bottom_left_area_body_entered(body: Node2D) -> void:
+	bodyEntered(body, get_node("BottomLeftArea/CollisionShape2D"), "Left")
+
+func _on_bottom_left_area_body_exited(body: Node2D) -> void:
+	bodyExited(body, get_node("BottomLeftArea/CollisionShape2D"), "Left")
+
+
+func _on_bottom_right_area_body_entered(body: Node2D) -> void:
+	bodyEntered(body, get_node("BottomRightArea/CollisionShape2D"), "Right")
+
+
+func _on_bottom_right_area_body_exited(body: Node2D) -> void:
+	bodyExited(body, get_node("BottomRightArea/CollisionShape2D"), "Right")

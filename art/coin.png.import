@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcn8b556a5smm"
-path="res://.godot/imported/doorTileMap.png-0620ec3724f4a7b7f835b2e16227a45b.ctex"
+uid="uid://quhwjkjvhib3"
+path="res://.godot/imported/coin.png-7a22d78603b91b8bca023a7cd8e523dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/doorTileMap.png"
-dest_files=["res://.godot/imported/doorTileMap.png-0620ec3724f4a7b7f835b2e16227a45b.ctex"]
+source_file="res://art/coin.png"
+dest_files=["res://.godot/imported/coin.png-7a22d78603b91b8bca023a7cd8e523dd.ctex"]
 
 [params]
 

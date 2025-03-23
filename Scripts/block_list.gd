@@ -12,12 +12,21 @@ func _ready() -> void:
 	for index in range(tile_set.get_source_count()):
 		var source_id = tile_set.get_source_id(index)
 		
+		print(source_id)
+		
 		if (source_id == 0 or source_id == 3):
 			continue
 		
 		var source = tile_set.get_source(source_id) as TileSetAtlasSource
 		
-		for tileIndex in range(source.get_tiles_count()):
+		var count = source.get_tiles_count()
+		
+		if source_id == 7:
+			count = 1
+		
+		for tileIndex in range(count):
+			print(tileIndex)
+			
 			var coords = source.get_tile_id(tileIndex)
 			var atlasImage:Image = source.texture.get_image()
 			
